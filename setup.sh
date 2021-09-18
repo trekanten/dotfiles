@@ -11,14 +11,9 @@ DOT_FILES=(
   .tool-versions
   .zshrc
 )
-
 echo "Adding symlinks to dotfiles:"
 for DOT_FILE in "${DOT_FILES[@]}"; do
   rm -rf $HOME/$DOT_FILE
   ln -s $THIS_DIR/$DOT_FILE $HOME/$DOT_FILE
   echo "    $HOME/$DOT_FILE -> $THIS_DIR/$DOT_FILE"
 done
-
-# Message
-echo "Installation done"
-echo "To set zsh as default shell, run: $ chsh -s $(which zsh)"
