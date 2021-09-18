@@ -6,7 +6,11 @@ source ./setup-zsh.sh
 
 # Add symlinks dotfiles
 THIS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
-DOT_FILES=(.gitconfig .zshrc)
+DOT_FILES=(
+  .gitconfig
+  .tool-versions
+  .zshrc
+)
 
 echo "Adding symlinks to dotfiles:"
 for DOT_FILE in "${DOT_FILES[@]}"; do
