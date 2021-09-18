@@ -1,0 +1,17 @@
+[user]
+    email = martinusishoel@live.no
+    name = Martinus Ishoel
+    username = trekanten
+[alias]
+    aa = "!git add --all"
+    b = "!git --no-pager branch --list --all"
+    branch-name = "!git rev-parse --abbrev-ref HEAD"
+    cm = "!git commit -m"
+    co = "!git checkout"
+    l = "!git log --pretty --graph --oneline"
+    publish = "!git push --set-upstream origin $(git branch-name)"
+    push-hard = "!git push origin +HEAD"
+    ref = "!git rev-parse --short HEAD"
+    reset-to-origin = "!git reset --hard origin/$(git branch-name)"
+    s = "!git status"
+    undo-last-commit = "!git reset HEAD^"

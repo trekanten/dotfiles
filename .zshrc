@@ -4,6 +4,14 @@ ZSH_THEME="simple"
 DISABLE_AUTO_UPDATE="true"
 DISABLE_UPDATE_PROMPT="true"
 
-plugins=(git zsh-autosuggestions ssh-agent asdf)
+plugins=(
+    asdf
+    cargo
+    git
+    rust
+    ssh-agent
+    z
+    zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
