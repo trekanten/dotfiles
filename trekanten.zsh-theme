@@ -1,27 +1,24 @@
 branch_info() {
     if git rev-parse --git-dir > /dev/null 2>&1; then
-        echo "$(git_current_branch)$(parse_git_dirty) $(git_prompt_ahead)$(git_prompt_behind)"
+        echo " $(git_current_branch)$(parse_git_dirty)$(git_prompt_ahead)$(git_prompt_behind)"
     else
-        echo ""
+        echo " X"
     fi
 }
 
 path() {
     if git rev-parse --git-dir > /dev/null 2>&1; then
         REPO=${$(git rev-parse --show-toplevel)##*/}
-        echo "${REPO}/$(git rev-parse --show-prefix)"
+        PATH="${REPO}/$(git rev-parse --show-prefix)"
+        echo " ${${PATH}%/}"
     else
-        echo "%2~"
+        echo " %3~"
     fi
 }
 
-status() {
-    echo '%(?:%{%F{cyan}%}:%{%F{red}%})➜ '
-}
+PROMPT='%K{white}%F{black}$(branch_info)%F{black}$(path) %(?:👍:👎) %f%k '
 
-PROMPT='$(branch_info) $(path) $(status) %f'
-
-ZSH_THEME_GIT_PROMPT_DIRTY='%{%F{yellow}%}*%f'
+ZSH_THEME_GIT_PROMPT_DIRTY='%F{red}*'
 ZSH_THEME_GIT_PROMPT_CLEAN=''
-ZSH_THEME_GIT_PROMPT_AHEAD='%{%F{yellow}%}↑%f'
-ZSH_THEME_GIT_PROMPT_BEHIND='%{%F{red}%}↓%f'
+ZSH_THEME_GIT_PROMPT_AHEAD='%F{black}↑'
+ZSH_THEME_GIT_PROMPT_BEHIND='%F{red}↓'
