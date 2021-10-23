@@ -5,7 +5,7 @@ echo "Setting up zsh"
 source ./setup-zsh.sh
 
 # Add symlinks dotfiles
-THIS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
+DOT_FILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)/.dotfiles"
 DOT_FILES=(
   .gitconfig
   .tool-versions
@@ -14,6 +14,6 @@ DOT_FILES=(
 echo "Adding symlinks to dotfiles:"
 for DOT_FILE in "${DOT_FILES[@]}"; do
   rm -rf $HOME/$DOT_FILE
-  ln -s $THIS_DIR/$DOT_FILE $HOME/$DOT_FILE
-  echo "    $HOME/$DOT_FILE -> $THIS_DIR/$DOT_FILE"
+  ln -s $DOT_FILES_DIR/$DOT_FILE $HOME/$DOT_FILE
+  echo "    $HOME/$DOT_FILE -> $DOT_FILES_DIR/$DOT_FILE"
 done

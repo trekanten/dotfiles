@@ -12,6 +12,7 @@
     publish = "!git push --set-upstream origin $(git branch-name)"
     push-hard = "!git push origin +HEAD"
     ref = "!git rev-parse --short HEAD"
+    remove-merged-branches="!git branch --merged | egrep -v '(^\\*|master|main|staging)' | xargs -r -- git branch -d"
     reset-to-origin = "!git reset --hard origin/$(git branch-name)"
     s = "!git status"
     undo-last-commit = "!git reset HEAD^"
