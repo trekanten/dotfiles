@@ -9,6 +9,7 @@ DOT_FILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)/.dotfil
 DOT_FILES=(
   .gitconfig
   .tool-versions
+  .zprofile
   .zshrc
 )
 echo "Adding symlinks to dotfiles:"

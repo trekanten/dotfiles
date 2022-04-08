@@ -15,4 +15,6 @@ plugins=(
     zsh-syntax-highlighting
 )
 
+alias y='yarn'
+
 source $ZSH/oh-my-zsh.sh

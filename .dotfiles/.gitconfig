@@ -16,3 +16,5 @@
     reset-to-origin = "!git reset --hard origin/$(git branch-name)"
     s = "!git status"
     undo-last-commit = "!git reset HEAD^"
+[core]
+	editor = code --wait
