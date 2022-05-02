@@ -6,8 +6,8 @@ DISABLE_UPDATE_PROMPT="true"
 
 plugins=(
     asdf
-    cargo
     git
+    rust
     rust
     ssh-agent
     z
