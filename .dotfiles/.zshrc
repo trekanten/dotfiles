@@ -1,4 +1,5 @@
 export ZSH=$HOME/.oh-my-zsh
+OMZ_PLUGIN_DIR=$ZSH/custom/plugins
 
 ZSH_THEME="trekanten"
 DISABLE_AUTO_UPDATE="true"
@@ -8,12 +9,14 @@ plugins=(
     asdf
     git
     rust
-    rust
     ssh-agent
     z
     zsh-autosuggestions
+    zsh-history-substring-search
     zsh-syntax-highlighting
 )
+
+fpath+=$OMZ_PLUGIN_DIR/zsh-completions/src
 
 alias y='yarn'
 

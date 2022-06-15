@@ -1,7 +1,7 @@
 #!/bin/bash
 
 OMZ_DIR=$HOME/.oh-my-zsh
-OMZ_PLUGIN_DIR=${ZSH_CUSTOM:-$OMZ_DIR/custom/plugins}
+OMZ_PLUGIN_DIR=$OMZ_DIR/custom/plugins
 ADSF_DIR=~/.asdf
 
 # Install oh-my-zsh
@@ -46,4 +46,22 @@ if [[ ! -d $ZSH_SYN_DIR ]]; then
   echo "zsh plugin zsh-syntax-highlighting: installation done"
 else
   echo "zsh plugin zsh-syntax-highlighting: already installed"
+fi
+
+ZSH_COMPLETIONS_DIR=${OMZ_PLUGIN_DIR}/zsh-completions
+if [[ ! -d $ZSH_COMPLETIONS_DIR ]]; then
+  echo "zsh plugin zsh-completions: installing"
+  git clone https://github.com/zsh-users/zsh-completions $ZSH_COMPLETIONS_DIR
+  echo "zsh plugin zsh-completions: installation done"
+else
+  echo "zsh plugin zsh-completions: already installed"
+fi
+
+ZSH_HISTORY_DIR=${OMZ_PLUGIN_DIR}/zsh-history-substring-search
+if [[ ! -d $ZSH_HISTORY_DIR ]]; then
+  echo "zsh plugin zsh-history-substring-search: installing"
+  git clone https://github.com/zsh-users/zsh-history-substring-search $ZSH_HISTORY_DIR
+  echo "zsh plugin zsh-history-substring-search: installation done"
+else
+  echo "zsh plugin zsh-history-substring-search: already installed"
 fi
