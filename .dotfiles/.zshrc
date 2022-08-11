@@ -18,6 +18,7 @@ plugins=(
 
 fpath+=$OMZ_PLUGIN_DIR/zsh-completions/src
 
+alias g='git'
 alias y='yarn'
 
 source $ZSH/oh-my-zsh.sh

@@ -10,6 +10,7 @@
     co = "!git checkout"
     l = "!git log --pretty --graph --oneline"
     publish = "!git push --set-upstream origin $(git branch-name)"
+    pull-branch = "!git fetch origin \"$1\":\"$1\" #"
     push-hard = "!git push origin +HEAD"
     ref = "!git rev-parse --short HEAD"
     remove-merged-branches="!git branch --merged | egrep -v '(^\\*|master|main|staging)' | xargs -r -- git branch -d"
