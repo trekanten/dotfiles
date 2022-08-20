@@ -23,7 +23,7 @@ ln -s $THIS_DIR/$THEME $OMZ_DIR/themes/$THEME
 # Install asdf
 if [[ ! -d $ADSF_DIR ]]; then
     echo "zsh plugin asdf: installing"
-    git clone https://github.com/asdf-vm/asdf.git $ADSF_DIR --branch v0.8.1
+    git clone https://github.com/asdf-vm/asdf.git $ADSF_DIR --branch v0.10.2
     echo "zsh plugin asdf: installation done"
 else
     echo "zsh plugin asdf: already installed"

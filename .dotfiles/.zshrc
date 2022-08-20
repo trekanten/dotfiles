@@ -8,7 +8,6 @@ DISABLE_UPDATE_PROMPT="true"
 plugins=(
     asdf
     git
-    rust
     ssh-agent
     z
     zsh-autosuggestions

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Setup zsh
-echo "Setting up zsh"
+echo -e "### Setting up zsh ###"
 source ./setup-zsh.sh
 
 # Add symlinks dotfiles
@@ -12,9 +12,14 @@ DOT_FILES=(
     .zprofile
     .zshrc
 )
-echo "Adding symlinks to dotfiles:"
+echo -e "\n### Adding symlinks to dotfiles ###"
 for DOT_FILE in "${DOT_FILES[@]}"; do
     rm -rf $HOME/$DOT_FILE
     ln -s $DOT_FILES_DIR/$DOT_FILE $HOME/$DOT_FILE
-    echo "    $HOME/$DOT_FILE -> $DOT_FILES_DIR/$DOT_FILE"
+    echo -e "$HOME/$DOT_FILE -> $DOT_FILES_DIR/$DOT_FILE"
 done
+
+echo -e "\n### Adding asdf plugins ###"
+asdf plugin add nodejs
+asdf plugin add yarn
+asdf install
